@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
 
 const dataSlice = createSlice({
 	name: "data",
@@ -9,17 +8,48 @@ const dataSlice = createSlice({
 			[0, 0, 0],
 			[0, 0, 0],
 		],
-		isUserChance: false,
+		user1: [false, ""],
+		user2: [false, ""],
 	},
 	reducers: {
-		registerChance(state, action) {},
-		changeUserChance(state, action) {
-			state["isUserChance"] = action.payload;
+		registerChance(state, action) {
+			switch (action.payload[0]) {
+				case "user1":
+					state[0][action.payload[1][0]][action.payload[1][1]] = state["user1"][1];
+					state["user1"][0] = !state["user1"][0];
+					state["user2"][0] = !state["user2"][0];
+					break;
+				case "user2":
+					state[0][action.payload[1][0]][action.payload[1][1]] = state["user2"][1];
+					state["user2"][0] = !state["user2"][0];
+					state["user1"][0] = !state["user1"][0];
+					break;
+				default:
+			}
 		},
-		resetGame(state, action) {},
+		setUser(state, action) {
+			switch (action.payload[0]) {
+				case "user1":
+					state["user1"] = action.payload[1];
+					break;
+				case "user2":
+					state["user2"] = action.payload[1];
+					break;
+				default:
+			}
+		},
+		resetGame(state, action) {
+			state[0] = [
+				[0, 0, 0],
+				[0, 0, 0],
+				[0, 0, 0],
+			];
+			state["user1"] = [false, ""];
+			state["user2"] = [false, ""];
+		},
 	},
 });
 
-export const { registerChance, changeUserChance, resetGame } = dataSlice.actions;
+export const { registerChance, setUser, resetGame } = dataSlice.actions;
 
 export default dataSlice.reducer;

@@ -1,37 +1,42 @@
-import { useState } from "react";
-import { toast } from "react-toastify";
 import Base from "../Base";
 import { useDispatch, useSelector } from "react-redux";
-import { changeUserChance } from "../redux/storingData";
+import { setUser, resetGame } from "../redux/storingData";
 import Container from "../Components/Container";
 
 export default function OnePlayer() {
-	const isUserChance = useSelector((state) => state["isUserChance"]);
+	const user1 = useSelector((state) => state["user1"]);
+	const user2 = useSelector((state) => state["user2"]);
 	const dispatch = useDispatch();
-	const [userIs, setUserIs] = useState();
 	return (
 		<Base>
 			<main className="mainData">
-				{userIs ? (
+				{user1[1] && user2[1] ? (
 					<>
 						<Container />
-						<h1>{isUserChance ? "Chance - User" : "Chance - Computer"}</h1>
+						<h1>{user1[0] ? "Chance - User" : "Chance - Computer"}</h1>
+						<div
+							onClick={() => {
+								dispatch(resetGame());
+							}}
+						>
+							Reset
+						</div>
 					</>
 				) : (
 					<>
 						What do you want to choose? X or O?
 						<div
 							onClick={() => {
-								setUserIs("X");
-								dispatch(changeUserChance(true));
+								dispatch(setUser(["user1", [true, "X"]]));
+								dispatch(setUser(["user2", [false, "O"]]));
 							}}
 						>
 							X
 						</div>
 						<div
 							onClick={() => {
-								setUserIs("O");
-								dispatch(changeUserChance(false));
+								dispatch(setUser(["user1", [false, "O"]]));
+								dispatch(setUser(["user2", [true, "X"]]));
 							}}
 						>
 							O
