@@ -1,0 +1,250 @@
+body {
+	margin: 0;
+	background-color: lightgoldenrodyellow;
+	font-family: Inter, sans-serif;
+	color: #ffffff;
+}
+h1,
+p {
+	margin: 0;
+	border: none;
+	padding: 0;
+}
+.header {
+	text-align: center;
+	padding: 20px 0px 10px 0px;
+}
+.mainData {
+	margin: 10px 50px;
+	height: 100%;
+	background-color: #778899;
+	border-radius: 10px;
+	padding: 30px;
+	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
+}
+footer h1 {
+	text-align: center;
+	width: 100%;
+	font-size: 14px;
+	color: #242021;
+	margin: 30px 0px 20px 0px;
+}
+.subjectChangeButton,
+.addSubjectButton,
+.exportButton,
+.uploadButton {
+	margin-right: 16px;
+	background-color: #ffffff;
+	color: #242021;
+	padding: 7px 15px;
+	border-radius: 5px;
+	border: none;
+	font-size: 14px;
+	font-weight: 600;
+	transition: all 0.25s ease;
+	cursor: pointer;
+}
+.addSubjectLabel {
+	font-weight: 500;
+}
+.addSubjectInput {
+	margin: 0px 10px 00px 10px;
+	padding: 7px 15px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	width: 32%;
+	font-size: 14px;
+	font-weight: 400;
+}
+.selectPage {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 175px 400px;
+}
+.selectOption {
+	background-color: #ffffff;
+	text-decoration: none;
+	color: #242021;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 5px;
+	border: none;
+	transition: all 0.25s ease;
+}
+.subjectName {
+	text-transform: uppercase;
+	font-size: 20px;
+	margin: 20px 0px 10px 0px;
+	letter-spacing: 0.75px;
+	font-weight: 700;
+}
+.line {
+	border-right: none;
+	border-bottom: none;
+	border-left: none;
+	border-color: #ffffff;
+	border-width: 0.5px;
+}
+.tableHeading {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 16px;
+	letter-spacing: 0.75px;
+	color: #2cbcb2;
+	margin-bottom: 10px;
+}
+.tableHeading span {
+	font-weight: 300;
+	text-transform: none;
+	font-size: 14px;
+	letter-spacing: 0px;
+	color: #ffffff;
+}
+.chapter button,
+.heading button,
+.subheading button {
+	background-color: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+.chapter,
+.heading,
+.subheading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 5px 0px;
+	padding: 5px 0px;
+	border-radius: 5px;
+}
+.chapter .iconsDiv,
+.heading .iconsDiv,
+.subheading .iconsDiv {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 15%;
+}
+.chapter .highlighterDiv {
+	margin-left: 20px;
+	background-color: #d44e28;
+	width: 3%;
+	height: 100%;
+}
+.chapter .inputField,
+.heading .inputField,
+.subheading .inputField {
+	flex-grow: 1;
+	margin: 0px 0px 0px 20px;
+	padding: 7px 15px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	font-weight: 600;
+}
+.heading .highlighterDiv {
+	margin-left: 20px;
+	background-color: #2cbcb2;
+	width: 6%;
+	height: 100%;
+}
+.heading .inputField {
+	font-weight: 400;
+}
+.subheading .highlighterDiv {
+	margin-left: 20px;
+	background-color: #242021;
+	width: 9%;
+	height: 100%;
+}
+.subheading .inputField {
+	font-weight: 200;
+	color: #696969;
+}
+.addRowButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: #ffffff;
+	color: #242021;
+	padding: 7px 15px;
+	border-radius: 5px;
+	border: none;
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 20px;
+	transition: all 0.25s ease;
+	cursor: pointer;
+}
+.addRowButton svg .lineColor,
+.iconsDiv button svg .lineColor {
+	fill: #242021;
+	transition: all 0.25s ease;
+}
+.iconsDiv button:hover svg .lineColor {
+	fill: #2cbcb2;
+}
+.uploadFile,
+.selectPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 50px;
+	height: 325px;
+	background-color: #778899;
+	border-radius: 10px;
+	padding: 30px;
+	box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.3);
+}
+.uploadFile input {
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.uploadFile label {
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #242021;
+	padding: 20px 25px;
+	background-color: #ffffff;
+	transition: all 0.25s ease;
+	cursor: pointer;
+	margin-right: 25px;
+}
+.uploadFile label svg path {
+	transition: all 0.25s ease;
+}
+.addRowButton:hover svg .lineColor,
+.uploadFile label:hover svg path {
+	fill: #ffffff;
+}
+footer a {
+	text-decoration: underline;
+	color: #000;
+}
+.subjectChangeButton:hover,
+.addSubjectButton:hover,
+.exportButton:hover,
+.uploadButton:hover,
+.selectOption:hover,
+.subjectChangeButton.active,
+.subjectChangeButton.active:hover,
+.addRowButton:hover,
+.uploadFile label:hover {
+	background-color: #2cbcb2;
+	color: #ffffff;
+}
