@@ -1,68 +1,7 @@
-[
-	{
-		"id": "0",
-		"text": "Mathematics",
-		"children": [
-			{
-				"id": "2",
-				"text": "0th chapter",
-				"children": [
-					{ "id": "3", "text": "0th chapter - 0th heading", "children": [] },
-					{ "id": "4", "text": "0th chapter - 1st heading", "children": [] },
-					{ "id": "5", "text": "0th chapter - 2nd heading", "children": [{ "id": "6", "text": "0th chapter - 2nd heading - 0th subheading", "children": [] }] },
-					{
-						"id": "7",
-						"text": "0th chapter - 3rd heading",
-						"children": [
-							{ "id": "8", "text": "0th chapter - 3rd heading - 0th subheading", "children": [] },
-							{ "id": "9", "text": "0th chapter - 3rd heading - 1st subheading", "children": [] },
-							{ "id": "10", "text": "0th chapter - 3rd heading - 2nd subheading", "children": [] },
-							{ "id": "11", "text": "0th chapter - 3rd heading - 3rd subheading", "children": [] }
-						]
-					}
-				]
-			},
-			{ "id": "12", "text": "2nd chapter", "children": [] },
-			{
-				"id": "13",
-				"text": "3rd chapter",
-				"children": [
-					{
-						"id": "14",
-						"text": "3rd chapter - 0th heading",
-						"children": [
-							{ "id": "15", "text": "3rd chapter - 0th heading - 0th subheading", "children": [] },
-							{ "id": "16", "text": "3rd chapter - 0th heading - 1st subheading", "children": [] }
-						]
-					},
-					{
-						"id": "17",
-						"text": "3rd chapter - 1st heading",
-						"children": [
-							{ "id": "18", "text": "3rd chapter - 1st heading - 0th subheading", "children": [] },
-							{ "id": "19", "text": "3rd chapter - 1st heading - 1st subheading", "children": [] }
-						]
-					},
-					{
-						"id": "20",
-						"text": "3rd chapter - 2nd heading",
-						"children": [
-							{ "id": "21", "text": "3rd chapter - 2nd heading - 0th subheading", "children": [] },
-							{ "id": "22", "text": "3rd chapter - 2nd heading - 1st subheading", "children": [] }
-						]
-					},
-					{
-						"id": "23",
-						"text": "3rd chapter - 3rd heading",
-						"children": [
-							{ "id": "24", "text": "3rd chapter - 3rd heading - 0th subheading", "children": [] },
-							{ "id": "25", "text": "3rd chapter - 3rd heading - 1st subheading", "children": [] },
-							{ "id": "26", "text": "3rd chapter - 3rd heading - 2nd subheading", "children": [] },
-							{ "id": "27", "text": "3rd chapter - 3rd heading - 3rd subheading", "children": [] }
-						]
-					}
-				]
-			}
-		]
-	}
-]
+{
+	"0": [
+		[0, 0, 0],
+		[0, 0, 0],
+		[0, 0, 0]
+	]
+}
