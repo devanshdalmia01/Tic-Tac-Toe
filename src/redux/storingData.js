@@ -71,93 +71,95 @@ const dataSlice = createSlice({
 			}
 		},
 		winningLogic(state, action) {
-			switch (state["lastFilled"]) {
-				case "00":
-					if (
-						(state[0][0][0] === state[0][0][1] && state[0][0][1] === state[0][0][2]) ||
-						(state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0]) ||
-						(state[0][0][0] === state[0][1][1] && state[0][1][1] === state[0][2][2])
-					) {
-						state["user1"][1] === state[0][0][0] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][0][0] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "01":
-					if ((state[0][0][0] === state[0][0][1] && state[0][0][1] === state[0][0][2]) || (state[0][0][1] === state[0][1][1] && state[0][1][1] === state[0][2][1])) {
-						state["user1"][1] === state[0][0][1] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][0][1] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "02":
-					if (
-						(state[0][0][0] === state[0][0][1] && state[0][0][1] === state[0][0][2]) ||
-						(state[0][0][2] === state[0][1][2] && state[0][1][2] === state[0][2][2]) ||
-						(state[0][0][2] === state[0][1][1] && state[0][1][1] === state[0][2][0])
-					) {
-						state["user1"][1] === state[0][0][2] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][0][2] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "10":
-					if ((state[0][1][0] === state[0][1][1] && state[0][1][1] === state[0][1][2]) || (state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0])) {
-						state["user1"][1] === state[0][1][0] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][1][0] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "11":
-					if (
-						(state[0][0][0] === state[0][1][1] && state[0][1][1] === state[0][2][2]) ||
-						(state[0][0][1] === state[0][1][1] && state[0][1][1] === state[0][2][1]) ||
-						(state[0][1][0] === state[0][1][1] && state[0][1][1] === state[0][1][2]) ||
-						(state[0][0][2] === state[0][1][1] && state[0][1][1] === state[0][2][0])
-					) {
-						state["user1"][1] === state[0][1][1] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][1][1] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "12":
-					if ((state[0][1][0] === state[0][1][1] && state[0][1][1] === state[0][1][2]) || (state[0][0][2] === state[0][1][2] && state[0][1][2] === state[0][2][2])) {
-						state["user1"][1] === state[0][1][2] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][1][2] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "20":
-					if (
-						(state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0]) ||
-						(state[0][2][0] === state[0][1][1] && state[0][1][1] === state[0][0][2]) ||
-						(state[0][2][0] === state[0][2][1] && state[0][2][1] === state[0][2][2])
-					) {
-						state["user1"][1] === state[0][2][0] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][2][0] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "21":
-					if ((state[0][2][0] === state[0][2][1] && state[0][2][1] === state[0][2][2]) || (state[0][2][1] === state[0][1][1] && state[0][1][1] === state[0][0][1])) {
-						state["user1"][1] === state[0][2][1] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][2][1] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
-				case "22":
-					if (
-						(state[0][0][0] === state[0][1][1] && state[0][1][1] === state[0][2][2]) ||
-						(state[0][2][0] === state[0][2][1] && state[0][2][1] === state[0][2][2]) ||
-						(state[0][2][2] === state[0][1][2] && state[0][1][2] === state[0][0][2])
-					) {
-						state["user1"][1] === state[0][2][2] && toast.success(`${state["user1"][1]} is winner.`);
-						state["user2"][1] === state[0][2][2] && toast.success(`${state["user2"][1]} is winner.`);
-						state["winnerDeclared"] = true;
-					}
-					break;
+			if (state["moves"] > 4) {
+				switch (state["lastFilled"]) {
+					case "00":
+						if (
+							(state[0][0][0] === state[0][0][1] && state[0][0][1] === state[0][0][2]) ||
+							(state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0]) ||
+							(state[0][0][0] === state[0][1][1] && state[0][1][1] === state[0][2][2])
+						) {
+							state["user1"][1] === state[0][0][0] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][0][0] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "01":
+						if ((state[0][0][0] === state[0][0][1] && state[0][0][1] === state[0][0][2]) || (state[0][0][1] === state[0][1][1] && state[0][1][1] === state[0][2][1])) {
+							state["user1"][1] === state[0][0][1] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][0][1] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "02":
+						if (
+							(state[0][0][0] === state[0][0][1] && state[0][0][1] === state[0][0][2]) ||
+							(state[0][0][2] === state[0][1][2] && state[0][1][2] === state[0][2][2]) ||
+							(state[0][0][2] === state[0][1][1] && state[0][1][1] === state[0][2][0])
+						) {
+							state["user1"][1] === state[0][0][2] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][0][2] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "10":
+						if ((state[0][1][0] === state[0][1][1] && state[0][1][1] === state[0][1][2]) || (state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0])) {
+							state["user1"][1] === state[0][1][0] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][1][0] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "11":
+						if (
+							(state[0][0][0] === state[0][1][1] && state[0][1][1] === state[0][2][2]) ||
+							(state[0][0][1] === state[0][1][1] && state[0][1][1] === state[0][2][1]) ||
+							(state[0][1][0] === state[0][1][1] && state[0][1][1] === state[0][1][2]) ||
+							(state[0][0][2] === state[0][1][1] && state[0][1][1] === state[0][2][0])
+						) {
+							state["user1"][1] === state[0][1][1] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][1][1] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "12":
+						if ((state[0][1][0] === state[0][1][1] && state[0][1][1] === state[0][1][2]) || (state[0][0][2] === state[0][1][2] && state[0][1][2] === state[0][2][2])) {
+							state["user1"][1] === state[0][1][2] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][1][2] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "20":
+						if (
+							(state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0]) ||
+							(state[0][2][0] === state[0][1][1] && state[0][1][1] === state[0][0][2]) ||
+							(state[0][2][0] === state[0][2][1] && state[0][2][1] === state[0][2][2])
+						) {
+							state["user1"][1] === state[0][2][0] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][2][0] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "21":
+						if ((state[0][2][0] === state[0][2][1] && state[0][2][1] === state[0][2][2]) || (state[0][2][1] === state[0][1][1] && state[0][1][1] === state[0][0][1])) {
+							state["user1"][1] === state[0][2][1] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][2][1] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
+					case "22":
+						if (
+							(state[0][0][0] === state[0][1][1] && state[0][1][1] === state[0][2][2]) ||
+							(state[0][2][0] === state[0][2][1] && state[0][2][1] === state[0][2][2]) ||
+							(state[0][2][2] === state[0][1][2] && state[0][1][2] === state[0][0][2])
+						) {
+							state["user1"][1] === state[0][2][2] && toast.success(`${state["user1"][1]} is winner.`);
+							state["user2"][1] === state[0][2][2] && toast.success(`${state["user2"][1]} is winner.`);
+							state["winnerDeclared"] = true;
+						}
+						break;
 
-				default:
+					default:
+				}
 			}
 		},
 		resetGame(state, action) {
