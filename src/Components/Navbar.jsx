@@ -5,7 +5,7 @@ export default function Navbar() {
 	return (
 		<header className="header">
 			<Link to="/">
-				<img src={Logo} alt="App Logo" height={60} />
+				<img src={Logo} alt="App Logo" height={90} />
 			</Link>
 		</header>
 	);

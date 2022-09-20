@@ -102,7 +102,7 @@ const dataSlice = createSlice({
 					}
 					break;
 				case "10":
-					if ((state[0][1][0] === state[0][1][1] && state[0][0][1] === state[0][1][2]) || (state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0])) {
+					if ((state[0][1][0] === state[0][1][1] && state[0][1][1] === state[0][1][2]) || (state[0][0][0] === state[0][1][0] && state[0][1][0] === state[0][2][0])) {
 						state["user1"][1] === state[0][1][0] && toast.success(`${state["user1"][1]} is winner.`);
 						state["user2"][1] === state[0][1][0] && toast.success(`${state["user2"][1]} is winner.`);
 						state["winnerDeclared"] = true;
