@@ -6,5 +6,7 @@
 	],
 	"user1": [false, ""],
 	"user2": [false, ""],
-	"moves": 0
+	"moves": 0,
+	"winnerDeclared": false,
+	"lastFilled": ""
 }
